@@ -12,16 +12,23 @@ Att skapa en dashboard som visualiserar och förenklar förståelsen av livsmede
 <br>
 
 # Tekniker & metoder
-Projektet byggs med en modern data- och visualiseringsstack. Python används som huvudspråk för databehandling och analys. Jupyter Notebook fungerar som plattform för EDA (Exploratory Data Analysis) och dokumentation av processer. Pandas för datarensning och transformation medan DuckDB tillsammans med dbdiagram använts för SQL-baserad modellering och visualisering av databasstrukturen. För att skapa dashboarden används Taipy som ramverk och Plotly/Matplotlib för att bygga interaktiva visualiseringar. Arbetet organiseras i en Kanban Board, där issues och tasks dokumenteras för att strukturera projektets utveckling.
+Projektet byggs med en modern data- och visualiseringsstack. Python används som huvudspråk för databehandling och analys. Jupyter Notebook fungerar som plattform för EDA (Exploratory Data Analysis) med hjälp av Pandas där grundläggande datavalidering görs på rådata. Datan laddas in i en DuckDB databas där dbt används för SQL-baserad rensning, transformationer, datamodellering samt tester och dokumentation. Dbdiagram kompletterar med visualisering av databasstrukturen. För att skapa dashboarden används Taipy som ramverk och Plotly/Matplotlib för att bygga interaktiva visualiseringar. Arbetet organiseras i en Kanban Board, där issues och tasks dokumenteras för att strukturera projektets utveckling.
 
-- Python (Projekt)
-- Jupyter Notebook (EDA)
-- Pandas (Datarensning)
-- Taipy (Dashboard)
-- Plotly/Matplotlib (Visualisering)
-- KanbanBoard (Dokumentera utvecklingen)
-- Duckdb (SQL/datamodellering)
-- Dbdiagram (Datamodellvisualisering)
+Python (Projekt)
+
+Jupyter Notebook/Pandas (EDA + grundläggande validering)
+
+DuckDB (Databas)
+
+dbt (Rensning, transformation, tester, dokumentation)
+
+Dbdiagram (Datamodellvisualisering)
+
+Taipy (Dashboard)
+
+Plotly/Matplotlib (Visualisering)
+
+KanbanBoard (Utvecklingsdokumentation)
 
 <br>
 
