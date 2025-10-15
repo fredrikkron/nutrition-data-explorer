@@ -8,13 +8,15 @@
         ('värde saknas' initialt val)
 
     - Göra ett par visualiseringar/analyser på gruppering med större antal inom en kategori
-
+        - Separera rätter från råvaror för att visualisera separat
+        
     - Ändra kolumner till bättre namn för dem som väljs ut efter modellering
         - 'Gruppering' till 'Livsmedelsgrupp'
+        - Ta bort units ifrån kolumnnamn
 
     - Specifiera värden i text separat för tydlighet till dashboard
         - g (Gram)
         - mg (Milligram)
-        - µg (microgram)
+        - µg (Microgram)
 
-    - Separera rätter från råvaror för att visualisera separat
+    
