@@ -210,7 +210,9 @@ __marimo__/
 *.DS_Store
 
 # DuckDB
-*.duckdb
+*.duckdb*
+*.wal
+*.tmp/
 
 # dbt
 target/
