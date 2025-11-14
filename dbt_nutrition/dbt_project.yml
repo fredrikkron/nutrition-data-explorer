@@ -32,3 +32,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_nutrition_explorer:
     +materialized: table
+
+    src:
+      +materialized: view
+      +schema: staging
+
+    dim:
+      +materialized: table
+      +schema: warehouse
+
+    # fct:
+    #   +schema: warehouse
