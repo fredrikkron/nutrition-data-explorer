@@ -1,0 +1,9 @@
+version: 2
+
+sources: 
+  - name: staging
+    description: "Raw data loaded into staging with Python script"
+    schema: staging
+    tables:
+      - name: data_Livsmedelsverket
+        description: "Raw data from Livsmedelsverket"
