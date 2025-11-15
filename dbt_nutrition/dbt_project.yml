@@ -34,12 +34,13 @@ models:
     +materialized: table
 
     src:
-      +materialized: view
+      +materialized: table
       +schema: staging
 
     dim:
       +materialized: table
       +schema: warehouse
 
-    # fct:
-    #   +schema: warehouse
+    fct:
+      +materialized: table
+      +schema: warehouse
