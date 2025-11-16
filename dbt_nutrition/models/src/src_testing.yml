@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: src_livsmedel
+    description: "Staging-modell med livsmedel och näringsvärden"
+    schema: staging
+    tests:
+      # Ingen null i kolumner
+      - not_null:
+          column_name: food_id
+      - not_null:
+          column_name: food_name
+      - not_null:
+          column_name: food_group
+      - not_null:
+          column_name: nutrient_name
+      - not_null:
+          column_name: unit
+
+      # Kontrollera att units är korrekta
+      - accepted_values:
+          column_name: unit
+          values: ['g', 'mg', 'µg', 'kcal']
+
+      # Inga negativa värden
+      - dbt_utils.expression_is_true:
+          expression: "value IS NULL OR value >= 0"
+
+      # Inga mellanslag omkring unit
+      - dbt_utils.expression_is_true:
+          expression: "unit = trim(unit)"
+
+      # Namn på livsmedel börjar inte med en siffra
+      - dbt_utils.expression_is_true:
+          expression: "NOT regexp_matches(food_name, '^[0-9]')"

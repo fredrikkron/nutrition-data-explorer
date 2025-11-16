@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    description: "Rådata från Livsmedelsverket"
+    schema: staging
+    tables:
+      - name: data_Livsmedelsverket
+        description: "Rådata"
