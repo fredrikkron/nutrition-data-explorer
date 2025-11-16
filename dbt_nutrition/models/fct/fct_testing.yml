@@ -1,0 +1,8 @@
+version: 2
+
+models:
+
+  - name: fct_food_nutrients
+    description: "Faktatabell för livsmedels & näringsämnen"
+    schema: warehouse
+    tests:
