@@ -1,0 +1,13 @@
+version: 2
+
+models:
+
+  - name: dim_food
+    description: "Dimensionstabell för livsmedel"
+    schema: warehouse
+    tests:
+
+  - name: dim_nutrients
+    description: "Dimensionstabell för näringsämnen"
+    schema: warehouse
+    tests:
