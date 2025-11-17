@@ -1,8 +1,23 @@
 version: 2
 
 models:
-
   - name: fct_food_nutrients
     description: "Faktatabell för livsmedels & näringsämnen"
     schema: warehouse
     tests:
+      # Relationstester för att säkerställa referensintegritet
+      - relationships:
+          column_name: food_id
+          to: ref('dim_food')
+          field: food_id
+
+      - relationships:
+          column_name: nutrient_id
+          to: ref('dim_nutrients')
+          field: nutrient_id
+
+      # Unik kombination av food_id, nutrient_id
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - food_id
+            - nutrient_id
