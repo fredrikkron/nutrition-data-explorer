@@ -6,8 +6,34 @@ models:
     description: "Dimensionstabell för livsmedel"
     schema: warehouse
     tests:
+    # Unika värden i food_id
+      - unique:
+          column_name: food_id
+    # Ingen null i kolumner
+      - not_null:
+          column_name: food_id 
+      - not_null:
+          column_name: food_name
+      - not_null:
+          column_name: food_group
+
 
   - name: dim_nutrients
     description: "Dimensionstabell för näringsämnen"
     schema: warehouse
     tests:
+    # Unika värden i nutrient_id
+      - unique:
+          column_name: nutrient_id
+    # Ingen null i kolumner
+      - not_null:
+          column_name: nutrient_id
+      - not_null:
+          column_name: nutrient_name
+      - not_null:
+          column_name: unit
+    # Kontrollera att units är utvalda värden
+      - accepted_values:
+          arguments:
+            column_name: unit
+            values: ['g', 'mg', 'µg', 'kcal']
