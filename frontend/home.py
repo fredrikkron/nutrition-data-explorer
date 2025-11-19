@@ -4,10 +4,10 @@ with tgb.Page() as home_page:
     with tgb.part(class_name="container-card"):
         tgb.navbar()
         
-        with tgb.part(class_name="title-card"):
+        with tgb.part():
             tgb.text("# Näringsportalen", mode="md")
 
-        with tgb.part(class_name="left-column"):
+        with tgb.part():
             tgb.text(
             """
             Välkommen till Näringsportalen!
