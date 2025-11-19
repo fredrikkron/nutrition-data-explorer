@@ -44,3 +44,7 @@ models:
     fct:
       +materialized: table
       +schema: warehouse
+    
+    mart:
+      +materialized: table
+      +schema: marts
