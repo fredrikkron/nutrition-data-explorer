@@ -9,7 +9,7 @@ INNER JOIN {{ ref('dim_food')}} f
     ON fn.food_id = f.food_id
 INNER JOIN {{ ref('dim_nutrients')}} n
     ON fn.nutrient_id = n.nutrient_id
-WHERE n.nutrient_name IN ('Energi')
+WHERE n.nutrient_name IN ('Energi') AND f.food_group != 'Rätter'
 ),
 
 pivot_data AS (

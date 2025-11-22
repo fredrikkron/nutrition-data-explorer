@@ -1,7 +1,7 @@
 import taipy.gui.builder as tgb
 
 with tgb.Page() as home_page:
-    with tgb.part(class_name="container-card"):
+    with tgb.part(class_name="dashboard-container"):
         tgb.navbar()
         
         with tgb.part():
@@ -14,7 +14,7 @@ with tgb.Page() as home_page:
 
             Detta är en interaktiv webbapplikation som låter dig utforska och analysera näringsdata på ett enkelt och intuitivt sätt.
 
-            Använd navigeringsfältet ovan för att komma åt olika sektioner av applikationen, inklusive instrumentpanelen och diagrammen.
+            Använd navigeringsfältet ovan för att komma åt olika sektioner av applikationen.
             
             """
             , mode="md"
