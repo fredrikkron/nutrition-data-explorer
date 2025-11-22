@@ -1,4 +1,3 @@
-import pandas as pd
 import duckdb
 
 con = duckdb.connect("database/näringsportalen.duckdb")

@@ -1,4 +1,11 @@
-/* layoout för KPI */
+/* layout för dashboarden */
+.dashboard-container {
+    background-color: #9fc197;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* layout för KPI */
 .kpi-layout {
     display: flex;           
     gap: 20px;               
@@ -9,7 +16,7 @@
 
 /* styling för varje KPI kort */
 .metric-card {
-    border: 1px solid #ddd;
+    border: 1px solid #f7f3f3cf;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
