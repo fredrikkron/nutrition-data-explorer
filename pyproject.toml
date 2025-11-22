@@ -9,7 +9,10 @@ dependencies = [
     "dbt-duckdb>=1.10.0",
     "duckdb>=1.4.2",
     "ipykernel>=7.1.0",
+    "ipython>=9.7.0",
+    "nbformat>=5.10.4",
     "openpyxl>=3.1.2",
     "pandas>=2.2.2",
+    "plotly>=6.5.0",
     "taipy>=4.1.0",
 ]
