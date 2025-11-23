@@ -50,7 +50,7 @@ def protein_chart():
             )
         ],
         yaxis_title= '',
-        plot_bgcolor='lightgrey',
+        plot_bgcolor='rgba(0,0,0,0)'
     )
 
     return fig
