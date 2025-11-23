@@ -15,6 +15,8 @@ with tgb.Page() as home_page:
             Detta är en interaktiv webbapplikation som låter dig utforska och analysera näringsdata på ett enkelt och intuitivt sätt.
 
             Använd navigeringsfältet ovan för att komma åt olika sektioner av applikationen.
+
+            Källan till all data kommer ifrån Livsmedelsverkets Livsmedelsdatabas version 2025-10-29.
             
             """
             , mode="md"
