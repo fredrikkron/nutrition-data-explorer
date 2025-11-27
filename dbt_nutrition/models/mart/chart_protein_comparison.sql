@@ -25,3 +25,4 @@ SELECT *
 FROM agg_group
 ORDER BY avg_protein DESC
 LIMIT 10
+OFFSET 1
