@@ -4,7 +4,6 @@ import plotly.express as px
 con = duckdb.connect("database/näringsportalen.duckdb")
 
 df_protein = con.execute("SELECT * FROM marts.chart_protein_comparison").fetchdf()
-df_protein
 con.close()
 
 def protein_chart():
@@ -14,11 +13,11 @@ def protein_chart():
         y='food_group',
         color='food_group',
         labels={'food_group': 'Kategori', 'avg_protein': 'Protein (g/100g)'},
-        title='Produkter inom många olika kategorier är bra proteinkällor för en varierad kost'
     )
 
     fig.update_traces(
-        hovertemplate='<b>%{y}</b><br>Protein: %{x:.1f} g<extra></extra>'
+        hovertemplate='<b>%{y}</b><br>Protein: %{x:.1f} g<extra></extra>',
+        marker_color='steelblue'
     )
 
     fig.update_yaxes(

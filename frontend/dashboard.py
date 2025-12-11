@@ -1,12 +1,15 @@
 import taipy.gui.builder as tgb
 from frontend.constants import connect_to_db
-from frontend.KPI import df_KPI_protein, df_KPI_sugar, df_KPI_kcal
+from frontend.KPI import df_KPI_total
 from frontend.charts import protein_chart
 from frontend.tables import carb_table
 
 con = connect_to_db()
 df_protein = con.execute("SELECT * FROM marts.chart_protein_comparison").fetchdf()
 con.close()
+
+# KPI
+products, groups, nutrients = df_KPI_total.iloc[0]
 
 # charts
 fig_protein = protein_chart()
@@ -22,14 +25,14 @@ with tgb.Page() as dashboard_page:
         tgb.text("# KPI", mode="md")
         with tgb.layout(class_name="kpi-layout", columns="1 1 1"):
             with tgb.part(class_name="metric-card"):
-                tgb.text("### > 10 g protein", mode="md")
-                tgb.text(f"### {len(df_KPI_protein)}", mode="md")
+                tgb.text("### Livsmedel", mode="md")
+                tgb.text(f"### {products}", mode="md")
             with tgb.part(class_name="metric-card"):
-                tgb.text("### > 20 g socker", mode="md")
-                tgb.text(f"### {len(df_KPI_sugar)}", mode="md")
+                tgb.text("### Matgrupperingar", mode="md")
+                tgb.text(f"### {groups}", mode="md")
             with tgb.part(class_name="metric-card"):
-                tgb.text("### > 400 kcal", mode="md")
-                tgb.text(f"### {len(df_KPI_kcal)}", mode="md")
+                tgb.text("### Näringsämnen", mode="md")
+                tgb.text(f"### {nutrients}", mode="md")
         with tgb.part():
             tgb.chart(figure="{fig_protein}")
         with tgb.part(class_name="df-layout"):
