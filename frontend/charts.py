@@ -20,6 +20,14 @@ def d_vitamin_chart():
 
     fig.update_xaxes(visible=False, showticklabels=False)
     
+    fig.add_hline(
+        y=10,
+        line_dash="dot",
+        line_color="green",
+        annotation_text="DRI 10 µg",
+        annotation_position="top right",
+        annotation_font=dict(color="white", size=16)
+    )
 
     fig.update_layout(
         showlegend=False,
@@ -47,6 +55,23 @@ def protein_chart_scatter():
 
     fig.update_xaxes(visible=False, showticklabels=False)
     
+    fig.add_hline(
+        y=57.27,
+        line_dash="dot",
+        line_color="red",
+        annotation_text="Kvinna 69 kg, DRI 57.27 g",
+        annotation_position="top right",
+        annotation_font=dict(color="white", size=14)
+    )
+
+    fig.add_hline(
+        y=69.72,
+        line_dash="dot",
+        line_color="blue",
+        annotation_text="Man 84 kg, DRI 69.72 g",
+        annotation_position="top right",
+        annotation_font=dict(color="white", size=14)
+    )
 
     fig.update_layout(
         showlegend=False,

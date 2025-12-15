@@ -35,4 +35,4 @@ models:
     # Kontrollera att units är utvalda värden
       - accepted_values:
           column_name: unit
-          values: ['g', 'mg', 'µg', 'kcal']
+          values: ['g', 'mg', 'µg', 'kcal', 'RE/µg']

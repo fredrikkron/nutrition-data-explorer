@@ -9,4 +9,4 @@ select
     mangd as value
 from
     stg_livsmedel
-where unit NOT IN ('kJ', 'C22:5', 'C20:5', 'C22:6', 'NE/mg', 'skaletc.', 'RE/µg', '%')
+where unit NOT IN ('kJ', 'C22:5', 'C20:5', 'C22:6', 'NE/mg', 'skaletc.', '%')
