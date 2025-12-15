@@ -20,7 +20,7 @@ models:
       # Kontrollera att units är korrekta
       - accepted_values:
           column_name: unit
-          values: ['g', 'mg', 'µg', 'kcal']
+          values: ['g', 'mg', 'µg', 'kcal', 'RE/µg']
 
       # Inga negativa värden
       - dbt_utils.expression_is_true:
