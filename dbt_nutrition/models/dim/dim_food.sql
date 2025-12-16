@@ -2,7 +2,7 @@ with src_livsmedel as (
     select
         food_id,
         food_name,
-        food_group
+        TRIM(food_group) AS food_group
     from {{ ref('src_livsmedel') }}
 )
 
