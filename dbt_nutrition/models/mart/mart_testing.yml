@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: D_vitamin
+    description: Livsmedel med vitamin D-innehåll över 5
+    schema: marts
+    columns:
+      - name: vitamin_d_amount
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 5.0000001
+
+
+models:
+  - name: filtering
+    description: Utvalda näringsämnen per livsmedel
+    schema: marts
+    columns:
+      - name: nutrient_name
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Protein
+                - Fett, totalt
+                - Kolhydrater, tillgängliga
+                - Fibrer
+                - Energi (kcal)
+                - Vitamin A
+                - Vitamin C
+                - Vitamin D
+                - Vitamin E
+                - Vitamin B12
+                - Kalcium, Ca
+                - Järn, Fe
+                - Magnesium, Mg
+                - Zink, Zn
+                - Kalium, K
+
+      - name: value
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+
+      - name: unit
+        tests:
+          - not_null
+
+models:
+  - name: protein
+    description: Top 10 livsmedel med högst proteininnehåll per matgrupp
+    schema: marts
+    columns:
+      - name: food_group
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - Baljväxter (bönor, linser och ärter)
+                - Dessertost
+                - Fisk färsk fryst kokt
+                - Fisk o skaldjursprodukter o rätter
+                - Fågel
+                - Hård ost mm
+                - Inälvor och organ
+                - Kött färskt fryst tillagat
+                - Kött processat
+                - Nötter frön
+                - Vegetabiliskt protein produkter och rätter
+
+      - name: protein_amount
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 100
