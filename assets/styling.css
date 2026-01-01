@@ -1,3 +1,11 @@
+/* titel */
+.header-flex {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+
 /* layout för KPI */
 .kpi-layout {
     display: flex;           
