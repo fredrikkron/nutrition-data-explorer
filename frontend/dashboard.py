@@ -82,8 +82,9 @@ con.close()
 
 
 with tgb.Page() as dashboard_page:
-    with tgb.part(class_name="container-card"):
-        tgb.navbar()
+    with tgb.part(class_name="header-flex"):
+        tgb.image("assets/nutrition_logo.png")
+        tgb.text("# Näringsportalen", mode="md")
 
     with tgb.part(class_name="dashboard-container"):
         tgb.text("# KPI", mode="md")                                # KPI
